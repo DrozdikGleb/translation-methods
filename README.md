@@ -11,9 +11,8 @@
 - [Условие](labs-description/02-recursive-parsing.pdf)
 - [Решение](topDownParser)
 
-### ANTLR
+### Трансляция функционального языка в Java, используя ANTLR
 
-- Вариант: 4
 - [Условие](http://neerc.ifmo.ru/~sta/2018-2019/3-parsing/03-bison-antlr.pdf)
 - [Решение](parserANTLR)
 
