@@ -1,0 +1,31 @@
+grammar Calculator
+add
+add returns [Integer val]
+    : mul addP(mul) { val = addP; };
+
+addP [Integer i] returns [Integer val]
+    : ADD mul addP(i + mul) { val = addP; }
+    | SUB mul addP(i - mul) { val = addP; }
+    | EPS { val = i; };
+
+mul returns [Integer val]
+    : fact mulP(fact) { val = mulP; };
+
+mulP [Integer i] returns [Integer val]
+    : MUL fact mulP(i * fact) { val = mulP; }
+    | DIV fact mulP(i / fact) { val = mulP; }
+    | EPS { val = i; };
+
+fact returns [Integer val]
+    : NUMBER { val = Integer.parseInt($NUMBER$); }
+    | LPAREN add RPAREN { val = add; };
+
+MUL : "\\*";
+SUB : "\\-";
+ADD : "\\+";
+DIV : "\\/";
+POW : "\\^";
+LPAREN : "\\(";
+RPAREN : "\\)";
+NUMBER : "[0]|[1-9][0-9]*";
+EPS : "e";

@@ -1,0 +1,18 @@
+digraph Tree {
+0 [label="S"];
+1 [label="Ds"];
+2 [label="D"];
+3 [label="Vs"];
+4 [label="V"];
+5 [label="a"];
+4 -> {5};
+6 [label=":"];
+3 -> {4,6};
+7 [label="T"];
+8 [label="boolean"];
+7 -> {8};
+2 -> {3,7};
+9 [label="eps"];
+1 -> {2,9};
+0 -> {1};
+}
